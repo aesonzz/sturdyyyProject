@@ -1,0 +1,55 @@
+<!-- Secciones de filtros y boton de limpiar filtros-->
+
+<div class="filters">
+  <div class="filter">
+    <label for="clothing">Clothing:</label>
+    <select id="clothing" [(ngModel)]="selectedCategory" (change)="applyFilters()">
+      <option value="All">All</option>
+      <option *ngFor="let category of uniqueCategories" [value]="category">{{ category }}</option>
+    </select>
+  </div>
+
+  <div class="filter">
+    <label for="size">Size:</label>
+    <select id="size" [(ngModel)]="selectedSizes" (change)="applyFilters()">
+      <option value="">All</option>
+      <option *ngFor="let size of uniqueSizes" [value]="size">{{ size }}</option>
+    </select>
+  </div>
+
+  <div class="filter">
+    <label for="color">Color:</label>
+    <select id="color" [(ngModel)]="selectedColors" (change)="applyFilters()">
+      <option value="">All</option>
+      <option *ngFor="let color of uniqueColors" [value]="color">{{ color }}</option>
+    </select>
+  </div>
+
+  <div class="sort">
+    <label for="sort">Sort by:</label>
+    <select id="sort" [(ngModel)]="sortBy" (change)="sortProducts()">
+      <option value="featured">Featured</option>
+      <option value="priceLowToHigh">Price: Low to High</option>
+      <option value="priceHighToLow">Price: High to Low</option>
+    </select>
+  </div>
+
+  <button (click)="clearFilters()">Clear all</button>
+  <span>{{ filteredProducts.length }} of {{ products.length }} products</span>
+</div>
+
+
+<!-- Mostramos los productos y el routing hacia product detail con el método correpondiente. -->
+
+<div class="products">
+  <div *ngFor="let product of filteredProducts" class="product-item">
+    <div class="product-image-container">
+      <img [src]="product.image" [alt]="product.name" class="product-image" (click)="goToProductDetail(product)">
+      <button class="view-button" [routerLink]="['/products', product.name]">View</button>
+    </div>
+    <div class="product-details">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.price | currency }}</p>
+    </div>
+  </div>
+</div>

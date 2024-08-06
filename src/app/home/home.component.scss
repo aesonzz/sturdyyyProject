@@ -1,0 +1,128 @@
+// scss de la parte del vídeo
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-container .background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+.video-container .video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.video-container .btn {
+  background-color: rgba(140, 119, 102, 0.3);
+  color: #422916;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border: 2px solid #422916;
+  border-radius: 0;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.video-container .btn:hover {
+  background-color: rgba(66, 41, 22, 0.8);
+  color: #F5DFC7;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.video-container .mute-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(140, 119, 102, 0.3);
+  border: 2px solid #422916;
+  color: #422916;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.video-container .mute-button:hover {
+  background-color: rgba(66, 41, 22, 0.8);
+  color: #F5DFC7;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.home-content {
+  text-align: center;
+  padding: 20px;
+}
+
+// Parte inferior con la promo de dos colecciones
+
+.promo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  color: #614735;
+}
+
+.promo-section .promo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.promo-section .promo-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.promo-section .promo-image {
+  width: 50%;
+  height: auto;
+}
+
+.promo-section .promo-text {
+  width: 50%;
+  text-align: center;
+  padding: 20px;
+}
+
+.promo-section .promo-text h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.promo-section .promo-text p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.promo-section .shop-now-button {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  color: #614735;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.promo-section .shop-now-button:hover {
+  border-bottom: 1px solid #BF997C;
+  color: #614735;
+  text-decoration: none;
+}

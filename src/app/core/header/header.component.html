@@ -1,0 +1,33 @@
+<!-- NAVBAR con el método para abrrir el carrito-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/collections">COLLECTIONS</a>
+      </li>
+    </ul>
+    <a class="navbar-brand mx-auto" href="#">STURDYYY PROJECT®</a>
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <button class="nav-link" (click)="openCart()">CART ({{ itemCount() }})</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!--Banner, la repetición de los spans es para crea el efecto loop de forma óptima-->
+
+<div *ngIf="showBanner">
+  <div class="banner">
+    <div class="banner-content">
+      <span>NEW COLLECTION OUT NOW | WORLDWIDE SHIPPING</span>
+      <span>NEW COLLECTION OUT NOW | WORLDWIDE SHIPPING</span>
+    </div>
+    <div class="banner-content">
+      <span>NEW COLLECTION OUT NOW | WORLDWIDE SHIPPING</span>
+      <span>NEW COLLECTION OUT NOW | WORLDWIDE SHIPPING</span>
+    </div>
+  </div>
+</div>

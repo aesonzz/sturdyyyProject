@@ -1,0 +1,44 @@
+<!-- Parte izquierda de la pantalla, llamamos al método para pasar a la pasarela de pago-->
+
+<div class="checkout-container">
+  <div class="checkout-form">
+    <h2>Checkout</h2>
+    <form>
+      <label for="email">Email</label>
+      <input type="email" id="email" required [(ngModel)]="email" name="email">
+      <button type="button" (click)="onProceedToPay()">Pay now</button>
+    </form>
+  </div>
+
+  <!-- Parte derecha, resumen de compra con el aum, dec, descuento, info del producto-->
+  <div class="checkout-summary">
+    <h2>Summary</h2>
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <img [src]="item.image" alt="{{item.name}}">
+      <div class="item-details">
+        <div class="item-info">
+          <p>{{ item.name }}</p>
+          <p>{{ item.price | currency:'EUR' }}</p>
+          <p>{{ item.selectedSize }}</p>
+        </div>
+        <div class="actions-container">
+          <div class="quantity-controls">
+            <button (click)="decrement(item)">-</button>
+            <span>{{ item.quantity }}</span>
+            <button (click)="increment(item)">+</button>
+          </div>
+          <button class="remove-button" (click)="removeItem(item)">Remove</button>
+        </div>
+      </div>
+    </div>
+    <div class="discount-section">
+      <label for="discount">Discount code or gift card</label>
+      <input type="text" id="discount" [(ngModel)]="discountCode" name="discount">
+      <button type="button" (click)="applyDiscount()">Apply</button>
+      <p *ngIf="discountError" class="error">{{ discountError }}</p>
+    </div>
+    <div>
+      <h3>Total: {{ total | currency:'EUR' }}</h3>
+    </div>
+  </div>
+</div>

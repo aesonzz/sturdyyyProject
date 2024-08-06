@@ -1,0 +1,25 @@
+
+<!-- El pop-up que permite abrir el modal-->
+<div class="popup-container" *ngIf="showPopup" (click)="openModal()">
+  <div class="popup-button">
+    10% OFF
+    <span class="close-button" (click)="closePopup()">X</span>
+  </div>
+</div>
+
+<!-- El modal con el método del unlocker-->
+
+<div class="popup-modal" *ngIf="showModal">
+  <div class="popup-content">
+    <div class="popup-header">
+      <h3>Get 10% off your first order</h3>
+      <span class="close-button" (click)="closeModal()">X</span>
+    </div>
+    <div class="popup-body">
+      Write down your email for funny content
+      <input type="email" placeholder="Email" [(ngModel)]="email">
+      <button (click)="unlockCode()">Unlock the code</button>
+    </div>
+    <p class="disclaimer">By submitting your email, you agree to receive marketing emails.</p>
+  </div>
+</div>

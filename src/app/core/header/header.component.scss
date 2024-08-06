@@ -1,0 +1,93 @@
+// Estilos del navbar
+
+.navbar {
+  background-color: #422916 !important;
+  border-bottom: 1px solid #845F46 !important;
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+  // Importante que sea inferior al del carrito para que este último al desplegarse se superponga a la navbar
+  z-index: 999;
+
+  .navbar-brand {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #F5DFC7;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &:hover {
+      color: #BF997C;
+    }
+  }
+
+  .nav-link {
+    color: #F5DFC7;
+
+    &:hover {
+      color: #BF997C;
+    }
+  }
+
+  .navbar-nav {
+    .nav-item {
+      margin-left: 20px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+
+// Estilo del contenido del Banner y el tiempo del movimiento
+.banner {
+  width: 100%;
+  background-color: #F5DFC7;
+  color: #422916;
+  overflow: hidden;
+  position: fixed;
+  top: 46px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+
+  .banner-content {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll 6000ms linear infinite;
+  }
+
+  .banner-content span {
+    display: inline-block;
+    padding-right: 100px;
+  }
+}
+
+// Movimiento del banner
+
+@keyframes scroll {
+  100% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

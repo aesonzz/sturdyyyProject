@@ -1,0 +1,37 @@
+<!--Invoca el Pop-Up del discount que es un submodule dentro de este componente-->
+<app-discount-popup></app-discount-popup>
+<!--Muestra y carga el video y ademas se invoca el método para mutear y desmutear el vídeo-->
+<div class="video-container">
+  <video autoplay loop [muted]="isMuted" playsinline class="background-video">
+    <source src="../../assets/videos/home-vid2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="video-overlay">
+    <button class="btn btn-primary" routerLink="/collections">SHOP NOW!</button>
+  </div>
+  <button class="mute-button" (click)="toggleMute()">
+    {{ isMuted ? 'Unmute' : 'Mute' }}
+  </button>
+</div>
+
+<!--Invoca el slider que es un submodule dentro de este componente-->
+<app-product-slider></app-product-slider>
+<!--Parte de la promo de la parte inferior-->
+<div class="promo-section">
+  <div class="promo-item">
+    <img src="assets/images/pretty1.webp" alt="Not A Denim Belt" class="promo-image">
+    <div class="promo-text">
+      <a href="#" class="shop-now-button" routerLink="/collections">Shop Now</a>
+      <h2>Pretty Girls Like Trap</h2>
+      <p>Dripping through the outfit, and through the headphones</p>
+    </div>
+  </div>
+  <div class="promo-item reverse">
+    <img src="assets/images/pretty3.webp" alt="Not A 20€ Wallet" class="promo-image">
+    <div class="promo-text">
+      <a href="#" class="shop-now-button" routerLink="/collections">Shop Now</a>
+      <h2>Not Just A Meter</h2>
+      <p>Giving you that feeling of wearing your favourite... Meter? Bra? Both?</p>
+    </div>
+  </div>
+</div>

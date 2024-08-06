@@ -1,0 +1,14 @@
+<!-- Invocamos los productos y los métodos para el slider-->
+<div class="product-slider">
+  <button class="arrow left" (click)="slideLeft()">&#8592;</button>
+  <div class="slider-container">
+    <div class="slider" [style.transform]="transformStyle">
+      <div class="product" *ngFor="let product of products">
+        <img [src]="product.image" alt="{{product.name}}">
+        <h3>{{product.name}}</h3>
+        <p>{{product.price | currency:'EUR':'symbol':'1.2-2'}}</p>
+      </div>
+    </div>
+  </div>
+  <button class="arrow right" (click)="slideRight()">&#8594;</button>
+</div>

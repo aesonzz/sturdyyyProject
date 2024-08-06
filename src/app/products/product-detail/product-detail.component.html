@@ -1,0 +1,27 @@
+<!-- Caraga el producto y sus imágenes-->
+<div *ngIf="product" class="product-detail-container">
+  <div class="product-images">
+    <div class="thumbnail-images">
+      <img *ngFor="let thumb of product.thumbnails"
+           [src]="thumb"
+           [alt]="product.name"
+           class="thumbnail"
+           (click)="changeMainImage(thumb)"
+           [class.active]="thumb === mainImageUrl">
+    </div>
+    <img [src]="mainImageUrl" [alt]="product.name" class="main-image">
+  </div>
+  <!-- Carga la info del producto-->
+  <div class="product-info">
+    <h1>{{ product.name }}</h1>
+    <p>{{ product.price | currency:'EUR':'symbol':'1.2-2' }} </p>
+    <p>Tax included. Shipping calculated at checkout.</p>
+    <!--Botón para seleccionar la talla-->
+    <div class="product-sizes">
+      <span>Size:</span>
+      <button *ngFor="let size of product.sizes" (click)="selectSize(size)" [class.selected]="selectedSize === size">{{ size }}</button>
+    <!--Botón para añadir al carrito-->
+    </div>
+    <button class="add-to-cart" (click)="addToCart()">Add to Cart</button>
+  </div>
+</div>

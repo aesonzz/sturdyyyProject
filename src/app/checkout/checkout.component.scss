@@ -1,0 +1,179 @@
+
+// Estilos del checkout
+.checkout-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  color: #845F46;
+
+  .checkout-form {
+    flex: 1;
+    margin-right: 20px;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      color: #845F46;
+
+      label {
+        margin-bottom: 10px;
+      }
+
+      input {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #845F46;
+        border-radius: 4px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #422916;
+        color: #F5DFC7;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+        background-color: #845F46;
+        color: #F5DFC7;
+        border-color: #F5DFC7;
+
+        &:hover {
+          background-color: #422916;
+          color: #F5DFC7;
+          border-color: #F5DFC7;
+        }
+      }
+    }
+  }
+// estilos del resumen de compra
+  .checkout-summary {
+    flex: 1;
+    margin-left: 20px;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+
+      img {
+        width: 120px;
+        height: 120px;
+        margin-right: 10px;
+      }
+
+      .item-details {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .item-info {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .actions-container {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+
+          .quantity-controls {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+            button {
+              padding: 5 5px;
+              background-color: #422916;
+              color: #F5DFC7;
+              border-color: #F5DFC7;
+              border-radius: 4px;
+              cursor: pointer;
+              background-color: #845F46;
+              color: #F5DFC7;
+              border-color: #F5DFC7;
+
+              &:hover {
+                background-color: #422916;
+                color: #F5DFC7;
+                border-color: #F5DFC7;
+              }
+            }
+
+            span {
+              margin: 0 10px;
+            }
+          }
+
+          .remove-button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            border: 1px solid #F5DFC7;
+            border-radius: 4px;
+            background-color: #422916;
+            color: #F5DFC7;
+            cursor: pointer;
+
+            background-color: #845F46;
+            color: #F5DFC7;
+            border-color: #F5DFC7;
+
+            &:hover {
+              background-color: #422916;
+              color: #F5DFC7;
+              border-color: #F5DFC7;
+            }
+          }
+        }
+      }
+    }
+// Estilos del descuento
+    .discount-section {
+      margin-top: 20px;
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input {
+        padding: 10px;
+        border: 1px solid #422916;
+        border-radius: 4px;
+        margin-right: 10px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #422916;
+        color: #F5DFC7;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+        background-color: #845F46;
+        color: #F5DFC7;
+        border-color: #F5DFC7;
+
+        &:hover {
+          background-color: #422916;
+          color: #F5DFC7;
+          border-color: #F5DFC7;
+        }
+      }
+
+      .error {
+        color: red;
+        margin-top: 10px;
+      }
+    }
+  }
+}
